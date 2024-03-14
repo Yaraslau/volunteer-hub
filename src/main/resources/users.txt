@@ -1,5 +1,0 @@
-0 admin admin 1
-1 yaraslau yaraslau 2
-2 volha volha 2
-3 bahdan bahdan 2
-4 commerce commerce 3

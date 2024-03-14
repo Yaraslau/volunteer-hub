@@ -45,7 +45,11 @@ public class Main {
                     item = getSelectedOption(scanner);
                     if(item != -1) {
                         List<Activity> activities = guestFacade.getEventActivities(item);
-                        MenuUtil.seeEventActivities(activities.get(0).getEvent(), activities);
+                        long selectedEventId = item;
+                        MenuUtil.seeEventActivities(events.stream()
+                                .filter(e -> e.getId() == selectedEventId)
+                                .findAny()
+                                .orElse(new Event()), activities);
                         scanner.nextLine();
                     }
                     break;

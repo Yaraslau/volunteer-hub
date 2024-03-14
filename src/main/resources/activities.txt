@@ -1,6 +1,0 @@
-0 0 Security 1 10 0 100
-1 0 Barman 1 10 0 100
-2 1 CheckPointStaff 1 20 0 100
-3 1 BikeRepairMaster 1 5 0 300
-4 2 Painter 0 4 1 0
-5 2 Cleaner 0 2 1 0

@@ -22,6 +22,12 @@ mvn clean package
 
 Run main class from com.adarviroh.volunteerhub.Main to run application
 
+## Dependencies
+
+You need to install and run Apache Derby Server Database according to volunteer-hub-db project:
+
+https://github.com/Yaraslau/volunteer-hub-db
+
 ## Versions
 
 0.1.0 - Spring Core Application with limited functionality
