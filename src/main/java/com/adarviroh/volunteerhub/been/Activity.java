@@ -15,14 +15,7 @@ public class Activity {
     private int capacity;
     private int salary;
 
-    public Activity(long id, String name, Event event, ActivityType type, int demand, int capacity, int salary) {
-        this.id = id;
-        this.name = name;
-        this.event = event;
-        this.type = type;
-        this.demand = demand;
-        this.capacity = capacity;
-        this.salary = salary;
+    public Activity() {
     }
 
     public long getId() {

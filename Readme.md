@@ -7,11 +7,10 @@ Current version - 0.1.0
 
 ## Technology Stack
 
-Java 11
-
-Spring Core 5.2.3
-
-Maven
+- Java 11 
+- Spring Core 5.2.3 
+- Spring JDBC 5.2.3 
+- Maven
 
 ## Build and Run application
 
@@ -22,9 +21,16 @@ mvn clean package
 
 Run main class from com.adarviroh.volunteerhub.Main to run application
 
+## Dependencies
+
+You need to install and run Apache Derby Server Database according to volunteer-hub-db project:
+
+https://github.com/Yaraslau/volunteer-hub-db
+
 ## Versions
 
 0.1.0 - Spring Core Application with limited functionality
+0.2.0 - Spring JDBC Application with limited functionality
 
 ## Current Features
 
