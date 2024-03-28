@@ -1,18 +1,27 @@
 package com.adarviroh.volunteerhub.been;
 
+import javax.persistence.*;
+
 /**
  * Created by Yaraslau_Dubovik on 03/02/2024
  */
+@Entity
+@Table(schema = "APP", name = "VOLUNTEER")
 public class Volunteer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @OneToOne
+    @JoinColumn(name = "USER_ID")
     private User user;
+
+    @OneToOne
+    @JoinColumn(name = "ACTIVITY_ID")
     private Activity activity;
 
-    public Volunteer(long id, User user, Activity activity) {
-        this.id = id;
-        this.user = user;
-        this.activity = activity;
+    public Volunteer() {
     }
 
     public long getId() {

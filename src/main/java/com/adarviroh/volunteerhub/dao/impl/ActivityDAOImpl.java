@@ -1,13 +1,12 @@
 package com.adarviroh.volunteerhub.dao.impl;
 
 import com.adarviroh.volunteerhub.been.Activity;
-import com.adarviroh.volunteerhub.been.Event;
-import com.adarviroh.volunteerhub.been.type.ActivityType;
 import com.adarviroh.volunteerhub.dao.ActivityDAO;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,31 +16,19 @@ import java.util.List;
 @Repository
 public class ActivityDAOImpl implements ActivityDAO {
 
-    private final static String GET_ALL_BY_EVENT_ID = "SELECT * FROM APP.ACTIVITY A WHERE A.EVENT_ID = ?";
-
-    private final RowMapper<Activity> matchRowMapper = (rs, i) -> {
-      Activity activity = new Activity();
-      activity.setId(rs.getLong("ID"));
-      activity.setName(rs.getString("NAME"));
-      activity.setType(ActivityType.getType(rs.getInt("TYPE")));
-      activity.setDemand(rs.getInt("DEMAND"));
-      activity.setCapacity(rs.getInt("CAPACITY"));
-      activity.setSalary(rs.getInt("SALARY"));
-      Event event = new Event();
-      event.setId(rs.getLong("EVENT_ID"));
-      activity.setEvent(event);
-      return activity;
-    };
-
-    private final JdbcTemplate jdbcTemplate;
+    private final SessionFactory sessionFactory;
 
     @Autowired
-    public ActivityDAOImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public ActivityDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
+    @Transactional
     public List<Activity> getEventActivities(long eventId) {
-        return  jdbcTemplate.query(GET_ALL_BY_EVENT_ID, new Object[]{eventId}, matchRowMapper);
+        Session session = sessionFactory.getCurrentSession();
+        return  session.createQuery("from Activity a where a.event.id = :eventId")
+                       .setParameter("eventId", eventId)
+                       .list();
     }
 }
