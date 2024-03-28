@@ -2,31 +2,32 @@ package com.adarviroh.volunteerhub.been;
 
 import com.adarviroh.volunteerhub.been.type.UserType;
 
+import javax.persistence.*;
+
 /**
  * Created by Yaraslau_Dubovik on 03/01/2024
  */
-public class User extends Entity {
+@Entity
+@Table(schema = "APP", name = "APP_USER")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Enumerated(EnumType.ORDINAL)
     private UserType type;
+
     private String name;
     private String password;
 
     public User() {
     }
 
-    public User(long id, String name, String password, UserType type) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.type = type;
-    }
-
-    @Override
     public void setId(long id) {
         this.id = id;
     }
 
-    @Override
     public long getId() {
         return id;
     }

@@ -1,33 +1,35 @@
 package com.adarviroh.volunteerhub.been;
 
 import com.adarviroh.volunteerhub.been.type.EventType;
+import javax.persistence.*;
 
 /**
  * Created by Yaraslau_Dubovik on 03/02/2024
  */
-public class Event extends Entity {
+@Entity
+@Table(schema = "APP", name = "EVENT")
+public class Event {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String name;
+
+    @Enumerated(EnumType.ORDINAL)
     private EventType type;
+
+    @ManyToOne
+    @JoinColumn(name = "OWNER_ID")
     private User owner;
 
     public Event() {
     }
 
-    public Event(long id, String name, EventType type, User owner) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.owner = owner;
-    }
-
-    @Override
     public long getId() {
         return id;
     }
 
-    @Override
     public void setId(long id) {
         this.id = id;
     }

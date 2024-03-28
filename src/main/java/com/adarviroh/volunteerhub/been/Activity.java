@@ -2,14 +2,27 @@ package com.adarviroh.volunteerhub.been;
 
 import com.adarviroh.volunteerhub.been.type.ActivityType;
 
+import javax.persistence.*;
+
+
 /**
  * Created by Yaraslau_Dubovik on 03/01/2024
  */
+@Entity
+@Table(schema = "APP", name = "ACTIVITY")
 public class Activity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String name;
+
+    @OneToOne
+    @JoinColumn(name = "EVENT_ID")
     private Event event;
+
+    @Enumerated(EnumType.ORDINAL)
     private ActivityType type;
     private int demand;
     private int capacity;
