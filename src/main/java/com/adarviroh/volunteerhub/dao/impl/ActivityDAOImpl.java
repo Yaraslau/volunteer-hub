@@ -2,12 +2,12 @@ package com.adarviroh.volunteerhub.dao.impl;
 
 import com.adarviroh.volunteerhub.been.Activity;
 import com.adarviroh.volunteerhub.dao.ActivityDAO;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 /**
@@ -16,19 +16,18 @@ import java.util.List;
 @Repository
 public class ActivityDAOImpl implements ActivityDAO {
 
-    private final SessionFactory sessionFactory;
+    private final EntityManager entityManager;
 
     @Autowired
-    public ActivityDAOImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public ActivityDAOImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Override
     @Transactional
     public List<Activity> getEventActivities(long eventId) {
-        Session session = sessionFactory.getCurrentSession();
-        return  session.createQuery("from Activity a where a.event.id = :eventId")
+        return  entityManager.createQuery("from Activity a where a.event.id = :eventId")
                        .setParameter("eventId", eventId)
-                       .list();
+                       .getResultList();
     }
 }
