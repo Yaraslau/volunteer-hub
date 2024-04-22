@@ -13,13 +13,9 @@ public class Volunteer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User user;
-
-    @OneToOne
-    @JoinColumn(name = "ACTIVITY_ID")
-    private Activity activity;
 
     public Volunteer() {
     }
@@ -40,16 +36,8 @@ public class Volunteer {
         this.user = user;
     }
 
-    public Activity getActivity() {
-        return activity;
-    }
-
-    public void setActivity(Activity activity) {
-        this.activity = activity;
-    }
-
     @Override
     public String toString() {
-        return "Activity: " + this.activity.getName() + "; Volunteer: " + this.user.getName();
+        return "Volunteer: " + this.user.getName();
     }
 }

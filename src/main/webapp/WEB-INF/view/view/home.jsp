@@ -1,0 +1,6 @@
+<div class="main">
+    <div class="text-section">Welcome to VolunteerHUB!</div>
+    <div class="text-section">VolunteerHUB is portal that connects volunteers and customers, helps to find activities for volunteers and volunteers for customers.</div>
+    <div class="text-section">Log in to get full experiance with VolunteerHUB, or create your personal account if that is your first visit.</div>
+    <div class="text-section">Or, <a href="/event/all" title="See all events">you can continue as Guest for see event list</a></div>
+</div>

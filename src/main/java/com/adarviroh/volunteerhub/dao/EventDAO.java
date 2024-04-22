@@ -11,4 +11,6 @@ public interface EventDAO {
 
     List<Event> getAllEvents();
 
+    Event getEvent(long eventId);
+
 }

@@ -1,0 +1,18 @@
+.event-name {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.event-owner {
+    color: #757575;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.activities-title {
+    text-decoration: underline;
+}
+
+.activity-name {
+    font-weight: bold;
+}

@@ -29,4 +29,10 @@ public class EventDAOImpl implements EventDAO {
         return entityManager.createQuery("from Event").getResultList();
     }
 
+    @Override
+    public Event getEvent(long eventId) {
+        return (Event) entityManager.createQuery("from Event e where e.id = :eventId")
+                            .setParameter("eventId", eventId)
+                            .getSingleResult();
+    }
 }

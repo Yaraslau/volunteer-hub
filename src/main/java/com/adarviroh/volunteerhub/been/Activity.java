@@ -3,6 +3,7 @@ package com.adarviroh.volunteerhub.been;
 import com.adarviroh.volunteerhub.been.type.ActivityType;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -18,15 +19,15 @@ public class Activity {
 
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "EVENT_ID")
-    private Event event;
-
     @Enumerated(EnumType.ORDINAL)
     private ActivityType type;
     private int demand;
     private int capacity;
     private int salary;
+
+    @OneToMany
+    @JoinColumn(name = "ACTIVITY_ID")
+    private List<Volunteer> volunteers;
 
     public Activity() {
     }
@@ -45,14 +46,6 @@ public class Activity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Event getEvent() {
-        return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
     }
 
     public ActivityType getType() {
@@ -85,6 +78,14 @@ public class Activity {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public List<Volunteer> getVolunteers() {
+        return volunteers;
+    }
+
+    public void setVolunteers(List<Volunteer> volunteers) {
+        this.volunteers = volunteers;
     }
 
     @Override

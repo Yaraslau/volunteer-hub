@@ -10,6 +10,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 
 import javax.persistence.EntityManager;
@@ -28,7 +29,7 @@ import java.util.Properties;
 })
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
-public class ApplicationConfig {
+public class ApplicationConfig extends WebMvcConfigurationSupport {
 
     @Value("${app.dbUrl}")
     private String dbUrl;
@@ -90,4 +91,5 @@ public class ApplicationConfig {
         hibernateProperties.setProperty("hibernate.dialect", hibernateDialect);
         return hibernateProperties;
     }
+
 }

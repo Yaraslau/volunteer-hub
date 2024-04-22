@@ -2,6 +2,7 @@ package com.adarviroh.volunteerhub.been;
 
 import com.adarviroh.volunteerhub.been.type.EventType;
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Yaraslau_Dubovik on 03/02/2024
@@ -22,6 +23,10 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "OWNER_ID")
     private User owner;
+
+    @OneToMany
+    @JoinColumn(name = "EVENT_ID")
+    private List<Activity> activities;
 
     public Event() {
     }
@@ -56,6 +61,14 @@ public class Event {
 
     public void setOwner(User owner) {
         this.owner = owner;
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(List<Activity> activities) {
+        this.activities = activities;
     }
 
     @Override

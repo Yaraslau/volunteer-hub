@@ -1,0 +1,70 @@
+body {
+    width: auto;
+    margin: 25px 50px;
+    font-family: Verdana;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.main {
+    padding: 25px 0;
+}
+
+.text-section {
+    margin: 10px 0;
+}
+
+.header {
+    position: relative;
+}
+
+.header .logo {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.header .logo a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.header .login {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.table-item div {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 15px;
+}
+
+.table-item a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.table-item a:hover {
+    font-weight: bold;
+}
+
+.table-item .table-column {
+    float: left;
+    width: 150px;
+}
+
+.table-item .table-string div {
+    margin: 0 10px 0 0;
+}
+
+.bg-color {
+    background-color: #e1e1e1;
+}
+
+.footer {
+    font-size: 12px;
+    line-height: 14px;
+    color: #a1a1a1;
+}
