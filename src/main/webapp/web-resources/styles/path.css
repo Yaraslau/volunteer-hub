@@ -1,0 +1,11 @@
+.path {
+    font-size: 12px;
+    line-height: 14px;
+    height: 14px;
+    margin-top: 10px;
+}
+
+.path div {
+    float: left;
+    margin: 0 5px 0 0;
+}

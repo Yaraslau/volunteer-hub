@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="home" extends="default-template">
+        <put-attribute name="body" value="/WEB-INF/view/view/home.jsp" />
+    </definition>
+    <definition name="events" extends="default-template">
+        <put-attribute name="title" value="VolunteerHUB - Event List" />
+        <put-attribute name="body" value="/WEB-INF/view/view/events.jsp" />
+    </definition>
+    <definition name="event" extends="default-template">
+        <put-attribute name="title" value="VolunteerHUB - Event" />
+        <put-attribute name="styles" value="/WEB-INF/view/styles/event-styles.jsp" />
+        <put-attribute name="path" value="/WEB-INF/view/path/event.jsp" />
+        <put-attribute name="body" value="/WEB-INF/view/view/event.jsp" />
+    </definition>
+</tiles-definitions>
