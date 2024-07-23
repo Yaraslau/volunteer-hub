@@ -1,0 +1,24 @@
+<div class="content" th:with="activitiesNumber=${event.activities.size()}">
+    <div class="text-section">Welcome to event:</div>
+    <div th:text="${event.name}" class="text-section event-name"></div>
+    <div th:text="'Owner: ' + ${event.owner.name}" class="text-section event-owner"></div>
+
+    <!--/* Content for case when event has activities */-->
+    <th:block th:if="${activitiesNumber > 0}">
+        <div th:text="'Event Activities (' + ${activitiesNumber} + ' opened):'" class="text-section activities-title"></div>
+        <div class="table">
+            <div th:each="activity : ${event.activities}" th:class="${activityStat.odd} ? 'table-item bg-color' : 'table-item'">
+                <div th:text="${activity.name}" class="activity-name"></div>
+                <div th:with="availableNumber=${activity.demand - activity.volunteers.size()}" class="table-string">
+                    <div th:text="'Demand: ' + ${activity.demand}" class="table-column"></div>
+                    <div th:text="'Available: ' + ${availableNumber > 0 ? availableNumber : 0}" class="table-column"></div>
+                    <div th:text="'Paid: ' + ${activity.salary > 0 ? activity.salary : 'NO'}" class="table-column"></div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+
+    <!--/* Content for case when event doesn't have activities */-->
+    <div th:if="${activitiesNumber == 0}" class="text-section">Currently this event doesn't have any opened activities.</div>
+
+</div>

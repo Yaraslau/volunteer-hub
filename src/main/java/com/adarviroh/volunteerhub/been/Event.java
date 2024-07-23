@@ -1,7 +1,7 @@
 package com.adarviroh.volunteerhub.been;
 
 import com.adarviroh.volunteerhub.been.type.EventType;
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 /**

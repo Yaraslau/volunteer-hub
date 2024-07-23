@@ -3,18 +3,15 @@ VolunteerHUB is pet-project of Yaraslau Dubovik.
 
 VolunteerHUB is portal that connects volunteers and customers, helps to find activities for volunteers and volunteers for customers.
 
-Current version - 0.3.0
+Current version - 0.4.0
 
 ## Technology Stack
 
-- Java 11 
-- Spring Core 5.2.3
-- Spring MVC 5.2.3
-- Servlet API 4.0.1
-- Spring Data JPA 5.2.3
-- Hibernate 5.6.15
-- HQL
+- Java 17 
+- Spring Boot 3.3.0
 - Apache Derby Server DB 10.15.2.0
+- HQL
+- Thymeleaf
 - Maven
 
 ## Build and Run application
@@ -42,6 +39,7 @@ https://github.com/Yaraslau/volunteer-hub-db
 - 0.2.1 - Spring + Hibernate Application with limited functionality
 - 0.2.2 - Spring Data JPA (Hibernate as JPA Vendor Adapter) Application with limited functionality
 - 0.3.0 - Spring MVC + Spring Data JPA (Hibernate as JPA Vendor Adapter) Application with limited functionality
+- 0.4.0 - Spring Boot Application with limited functionality
 
 ## Current Features
 

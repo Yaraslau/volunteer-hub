@@ -1,0 +1,8 @@
+<div th:fragment="layout(body, hasPath)" class="main">
+    <div th:replace="~{fragments/common/header}"></div>
+    <th:block th:if="${hasPath}">
+        <div th:replace="~{${'fragments/path/' + body}}"></div>
+    </th:block>
+    <div th:replace="~{${'fragments/' + body}}"></div>
+    <div th:replace="~{fragments/common/footer}"></div>
+</div>

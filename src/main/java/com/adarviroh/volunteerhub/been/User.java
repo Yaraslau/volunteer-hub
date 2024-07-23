@@ -2,7 +2,7 @@ package com.adarviroh.volunteerhub.been;
 
 import com.adarviroh.volunteerhub.been.type.UserType;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Created by Yaraslau_Dubovik on 03/01/2024
