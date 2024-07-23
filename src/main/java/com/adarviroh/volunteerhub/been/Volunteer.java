@@ -1,6 +1,6 @@
 package com.adarviroh.volunteerhub.been;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Created by Yaraslau_Dubovik on 03/02/2024

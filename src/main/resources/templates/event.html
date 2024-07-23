@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/common/head :: common_head(~{::title}, ~{::link})}">
+    <title>VolunteerHUB - Event</title>
+    <link th:href="@{/styles/path.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/event.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div th:replace="~{fragments/layouts/main-layout :: layout(event, true)}"></div>
+</body>
+</html>

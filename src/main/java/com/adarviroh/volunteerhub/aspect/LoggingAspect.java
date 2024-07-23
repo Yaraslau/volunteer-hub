@@ -25,7 +25,7 @@ public class LoggingAspect {
 
     @Around(value = "executeLogging()")
     public Object logMethodCall(ProceedingJoinPoint joinPoint) throws Throwable {
-        StringBuilder message = new StringBuilder(" Method: ")
+        StringBuilder message = new StringBuilder("Method: ")
                 .append(joinPoint.getSignature().getName())
                 .append(" was called");
         Object[] args = joinPoint.getArgs();

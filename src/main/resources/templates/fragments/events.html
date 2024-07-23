@@ -1,0 +1,13 @@
+<div class="content">
+    <div class="text-section">Choose event to get more information about open activities for volunteers.</div>
+    <div class="table">
+        <div th:each="event : ${events}" th:class="${eventStat.odd} ? 'table-item bg-color' : 'table-item'">
+            <div>
+                <a th:href="@{/event/get/{eventId}(eventId=${event.id})}"
+                   th:title="'Click to get more information about ' + ${event.name} + ' event'"
+                   th:text="${event.name}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

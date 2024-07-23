@@ -1,0 +1,11 @@
+<head th:fragment="common_head(title, links)">
+    <meta charset="UTF-8">
+    <title th:replace="${title}">VolunteerHUB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Common styles and scripts -->
+    <link th:href="@{/styles/general.css}" rel="stylesheet" type="text/css" />
+
+    <!--/* Per-page placeholder for additional links */-->
+    <th:block th:replace="${links}" />
+</head>
